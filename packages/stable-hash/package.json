@@ -1,0 +1,23 @@
+{
+  "name": "@ocyrusjs/stable-hash",
+  "version": "1.0.0",
+  "description": "Deterministic object hashing for caching and ETags.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "bench": "vitest bench"
+  },
+  "keywords": ["hash", "stable", "deterministic", "object", "caching"],
+  "author": "Nishith Patel",
+  "license": "MIT"
+}

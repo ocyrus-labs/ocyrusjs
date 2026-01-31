@@ -1,0 +1,23 @@
+{
+  "name": "@ocyrusjs/safe-json",
+  "version": "1.0.0",
+  "description": "Crash-proof JSON parsing with zero-allocation fallback.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "bench": "vitest bench"
+  },
+  "keywords": ["json", "safe", "parse", "zero-allocation"],
+  "author": "Nishith Patel",
+  "license": "MIT"
+}
