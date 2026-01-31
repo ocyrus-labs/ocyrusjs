@@ -1,0 +1,29 @@
+{
+  "name": "ocyrusjs",
+  "version": "1.0.0",
+  "description": "The Zero-Allocation Utility Library for High-Performance JavaScript (Umbrella Package).",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "echo 'Run tests in sub-packages'",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@ocyrusjs/safe-json": "^1.0.0",
+    "@ocyrusjs/heavy-map": "^1.0.0",
+    "@ocyrusjs/deep-access": "^1.0.0",
+    "@ocyrusjs/stable-hash": "^1.0.0"
+  },
+  "keywords": ["performance", "utility", "zero-allocation", "bundle"],
+  "author": "Nishith Patel",
+  "license": "MIT"
+}
