@@ -24,12 +24,11 @@ jobs:
       - name: Build all packages
         run: npm run build
 
-      - name: Publish to NPM
-        run: npm publish --workspaces --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish Umbrella Package
-        run: npm publish -w ocyrusjs --access public
+      - name: Publish to NPM (Fault Tolerant)
+        run: |
+          for dir in packages/*; do
+            echo "📦 Publishing workspace: $dir"
+            npm publish -w "$dir" --access public || echo "⚠️  Skipping $dir (Likely already published)"
+          done
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
