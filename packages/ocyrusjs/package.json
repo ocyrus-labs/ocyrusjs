@@ -21,7 +21,8 @@
     "@ocyrusjs/safe-json": "^1.0.0",
     "@ocyrusjs/heavy-map": "^1.0.0",
     "@ocyrusjs/deep-access": "^1.0.0",
-    "@ocyrusjs/stable-hash": "^1.0.0"
+    "@ocyrusjs/stable-hash": "^1.0.0",
+    "@ocyrusjs/retry": "^1.0.0"
   },
   "keywords": ["performance", "utility", "zero-allocation", "bundle"],
   "author": "Nishith Patel",
