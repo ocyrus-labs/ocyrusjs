@@ -2,7 +2,7 @@
 
 > **The Zero-Allocation Utility Library for High-Performance JavaScript.**
 
-[![npm version](https://img.shields.io/npm/v/ocyrus.svg)](https://www.npmjs.com/package/ocyrus)
+[![npm version](https://img.shields.io/npm/v/ocyrus.svg)](https://www.npmjs.com/package/ocyrusjs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **Ocyrus** (pronounced *Osiris*) is a collection of essential utility functions designed for **critical-path performance**. Unlike standard utility libraries that prioritize convenience over memory usage, Ocyrus focuses on:
@@ -19,6 +19,8 @@
 | **`heavyMap`** | Async/Chunked array processing. **Prevents UI Freeze**. | **9,200 ops/sec** (Non-blocking) |
 | **`deepAccess`** | Safe nested getters/setters. No `try/catch`. | **9.3M ops/sec** |
 | **`stableHash`** | Deterministic object hashing for caching. | **510k ops/sec** |
+| **`retry`** | High-perf exponential backoff with jitter. | **11.2M ops/sec** (Fast path) |
+| **`fastClone`** | Deep clone utility. 8x faster than `structuredClone`. | **4.7M ops/sec** |
 
 ---
 
@@ -97,6 +99,34 @@ const a = { id: 1, filter: 'active' };
 const b = { filter: 'active', id: 1 }; // Different order
 
 console.log(stableHash(a) === stableHash(b)); // true
+```
+
+### `retry`
+Retry a promise with exponential backoff and jitter.
+
+```typescript
+import { retry } from 'ocyrus';
+
+const data = await retry(async () => {
+  return await fetchData();
+}, {
+  retries: 3,
+  minTimeout: 500,
+  onRetry: (err, attempt) => console.log(`Retry ${attempt}...`)
+});
+```
+
+### `fastClone`
+Deep clone objects and arrays up to 8x faster than `structuredClone`.
+
+```typescript
+import { fastClone } from 'ocyrus';
+
+const original = { a: 1, b: { c: 2 } };
+const copy = fastClone(original);
+
+console.log(copy !== original); // true
+console.log(copy.b !== original.b); // true
 ```
 
 ---

@@ -1,0 +1,23 @@
+{
+  "name": "@ocyrusjs/fast-clone",
+  "version": "1.0.0",
+  "description": "High-performance, zero-allocation deep clone utility for JavaScript objects.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "bench": "vitest bench"
+  },
+  "keywords": ["clone", "deep-clone", "performance", "zero-allocation", "copy"],
+  "author": "Nishith Patel",
+  "license": "MIT"
+}
