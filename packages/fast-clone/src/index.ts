@@ -1,13 +1,16 @@
 /**
  * Deep clones an object or array with high performance.
- * Supports primitives, Objects, and Arrays.
- * Does not support Circular References or complex classes (Map, Set, Date) in the zero-allocation path.
+ * Optimized for objects and arrays without circular references.
+ * 
+ * @param val - The value to deep clone
  */
 export function fastClone<T>(val: T): T {
+  // Fast path: primitives
   if (val === null || typeof val !== 'object') {
     return val;
   }
 
+  // Array path
   if (Array.isArray(val)) {
     const len = val.length;
     const clone = new Array(len);
@@ -17,8 +20,12 @@ export function fastClone<T>(val: T): T {
     return clone as any;
   }
 
-  const clone = Object.create(Object.getPrototypeOf(val));
+  // Object path: Preserve prototype
+  const proto = Object.getPrototypeOf(val);
+  const clone = Object.create(proto);
+  
   for (const key in val) {
+    // Only clone own properties for performance and safety
     if (Object.prototype.hasOwnProperty.call(val, key)) {
       clone[key] = fastClone((val as any)[key]);
     }

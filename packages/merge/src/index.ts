@@ -1,19 +1,32 @@
 /**
  * Deeply merges two or more objects.
+ * Optimized for performance and handles null/undefined sources gracefully.
+ * 
+ * @param target - The destination object
+ * @param sources - One or more source objects
  */
 export function merge<T extends object>(target: T, ...sources: any[]): T {
-  if (!sources.length) return target;
+  // Fast path: No sources
+  if (!sources || sources.length === 0) return target;
+  
   const source = sources.shift();
 
-  if (isObject(target) && isObject(source)) {
-    for (const key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        if (isObject((source as any)[key])) {
-          if (!(target as any)[key]) (target as any)[key] = {};
-          merge((target as any)[key], (source as any)[key]);
-        } else {
-          (target as any)[key] = (source as any)[key];
+  // Fast path: Invalid target or source
+  if (!isObject(target) || !isObject(source)) {
+    return merge(target, ...sources);
+  }
+
+  for (const key in source) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      const sourceVal = (source as any)[key];
+      
+      if (isObject(sourceVal)) {
+        if (!isObject((target as any)[key])) {
+          (target as any)[key] = {};
         }
+        merge((target as any)[key], sourceVal);
+      } else {
+        (target as any)[key] = sourceVal;
       }
     }
   }
@@ -21,6 +34,9 @@ export function merge<T extends object>(target: T, ...sources: any[]): T {
   return merge(target, ...sources);
 }
 
+/**
+ * Checks if a value is a non-array object.
+ */
 function isObject(item: any): item is object {
-  return item && typeof item === 'object' && !Array.isArray(item);
+  return item !== null && typeof item === 'object' && !Array.isArray(item);
 }

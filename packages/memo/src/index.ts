@@ -1,10 +1,18 @@
+export interface MemoizeOptions {
+  /** Maximum number of unique argument combinations to cache. Default: 1000 */
+  maxSize?: number;
+}
+
 /**
  * Memoizes a function with high performance.
- * Optimized for both single and multiple arguments using a cache tree.
+ * Leverages a cache tree (nested Maps) for zero-allocation multi-argument lookups.
+ * 
+ * @param fn - The function to memoize
+ * @param options - Configuration options
  */
 export function memoize<T extends (...args: any[]) => any>(
   fn: T,
-  options: { maxSize?: number } = {}
+  options: MemoizeOptions = {}
 ): T {
   const cache = new Map<any, any>();
   const maxSize = options.maxSize || 1000;
@@ -12,7 +20,7 @@ export function memoize<T extends (...args: any[]) => any>(
   return function (this: any, ...args: any[]): any {
     const len = args.length;
     
-    // FAST PATH: Single argument
+    // FAST PATH: Single argument (most common case)
     if (len === 1) {
       const arg = args[0];
       if (cache.has(arg)) return cache.get(arg);
@@ -22,7 +30,8 @@ export function memoize<T extends (...args: any[]) => any>(
       return result;
     }
 
-    // MULTI PATH: Cache Tree
+    // MULTI PATH: Cache Tree Lookups
+    // We traverse nested maps based on argument references.
     let current = cache;
     for (let i = 0; i < len - 1; i++) {
       const arg = args[i];
