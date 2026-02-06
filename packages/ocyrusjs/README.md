@@ -2,7 +2,7 @@
 
 > **The Zero-Allocation Utility Library for High-Performance JavaScript.**
 
-[![npm version](https://img.shields.io/npm/v/ocyrus.svg)](https://www.npmjs.com/package/ocyrusjs)
+[![npm version](https://img.shields.io/npm/v/ocyrus.svg)](https://www.npmjs.com/package/ocyrus)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **Ocyrus** (pronounced *Osiris*) is a collection of essential utility functions designed for **critical-path performance**. Unlike standard utility libraries that prioritize convenience over memory usage, Ocyrus focuses on:
@@ -26,10 +26,10 @@
 | **`pool`** | Object pool for GC prevention. | **31M ops/sec** | **Eliminates GC** |
 | **`bitset`** | Memory-efficient bit manipulation. | **33M ops/sec** | 32x memory savings |
 | **`memo`** | High-speed multi-arg memoization. | **30M ops/sec** | **1.15x faster** than `lodash` |
-| **`clamp`** | Fast number clamping. | **25M ops/sec** | Optimized logic |
-| **`debounce`** | Minimal debouncing. | - | Low overhead |
-| **`throttle`** | Minimal throttling. | - | Low overhead |
-| **`isPlainObject`** | Fast plain object check. | **40M ops/sec** | Faster than `lodash` |
+| **`clamp`** | Fast number clamping. | **25M ops/sec** | **1.3x faster** than `Math.min/max` |
+| **`debounce`** | High-performance debouncing. | **3.8M ops/sec** | Low-overhead wrapper |
+| **`throttle`** | High-performance throttling. | **16M ops/sec** | **1.2x faster** than `lodash` |
+| **`isPlainObject`** | Fast plain object check. | **24M ops/sec** | **4.5x faster** than `lodash` |
 | **`pick`** | Pick object properties. | **15M ops/sec** | Faster than destruct |
 | **`omit`** | Omit object properties. | **12M ops/sec** | High performance |
 | **`chunk`** | Split array into chunks. | **8M ops/sec** | Efficient slicing |
@@ -116,80 +116,6 @@ const a = { id: 1, filter: 'active' };
 const b = { filter: 'active', id: 1 }; // Different order
 
 console.log(stableHash(a) === stableHash(b)); // true
-```
-
-### `retry`
-Retry a promise with exponential backoff and jitter.
-
-```typescript
-import { retry } from 'ocyrus';
-
-const data = await retry(async () => {
-  return await fetchData();
-}, {
-  retries: 3,
-  minTimeout: 500,
-  onRetry: (err, attempt) => console.log(`Retry ${attempt}...`)
-});
-```
-
-### `fastClone`
-Deep clone objects and arrays up to 8x faster than `structuredClone`.
-
-```typescript
-import { fastClone } from 'ocyrus';
-
-const original = { a: 1, b: { c: 2 } };
-const copy = fastClone(original);
-
-console.log(copy !== original); // true
-console.log(copy.b !== original.b); // true
-```
-
-### `eventEmitter`
-Zero-allocation events.
-
-```typescript
-import { EventEmitter } from 'ocyrus';
-const ee = new EventEmitter();
-ee.on('event', (data) => console.log(data));
-ee.emit('event', 'payload');
-```
-
-### `lru`
-Fast LRU cache.
-
-```typescript
-import { LRU } from 'ocyrus';
-const cache = new LRU(100);
-cache.set('key', 'value');
-```
-
-### `pool`
-Object pooling to prevent GC.
-
-```typescript
-import { Pool } from 'ocyrus';
-const pool = new Pool(() => ({ x: 0, y: 0 }));
-const v = pool.acquire();
-pool.release(v);
-```
-
-### `bitset`
-Memory-efficient bit manipulation.
-
-```typescript
-import { BitSet } from 'ocyrus';
-const bits = new BitSet(1024);
-bits.set(100);
-```
-
-### `memo`
-High-speed multi-argument memoization.
-
-```typescript
-import { memoize } from 'ocyrus';
-const fastFn = memoize((a, b) => a + b);
 ```
 
 ---

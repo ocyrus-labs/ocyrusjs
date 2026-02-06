@@ -26,10 +26,10 @@
 | **`pool`** | Object pool for GC prevention. | **31M ops/sec** | **Eliminates GC** |
 | **`bitset`** | Memory-efficient bit manipulation. | **33M ops/sec** | 32x memory savings |
 | **`memo`** | High-speed multi-arg memoization. | **30M ops/sec** | **1.15x faster** than `lodash` |
-| **`clamp`** | Fast number clamping. | **25M ops/sec** | Optimized logic |
-| **`debounce`** | Minimal debouncing. | - | Low overhead |
-| **`throttle`** | Minimal throttling. | - | Low overhead |
-| **`isPlainObject`** | Fast plain object check. | **40M ops/sec** | Faster than `lodash` |
+| **`clamp`** | Fast number clamping. | **25M ops/sec** | **1.3x faster** than `Math.min/max` |
+| **`debounce`** | High-performance debouncing. | **3.8M ops/sec** | Low-overhead wrapper |
+| **`throttle`** | High-performance throttling. | **16M ops/sec** | **1.2x faster** than `lodash` |
+| **`isPlainObject`** | Fast plain object check. | **24M ops/sec** | **4.5x faster** than `lodash` |
 | **`pick`** | Pick object properties. | **15M ops/sec** | Faster than destruct |
 | **`omit`** | Omit object properties. | **12M ops/sec** | High performance |
 | **`chunk`** | Split array into chunks. | **8M ops/sec** | Efficient slicing |
@@ -190,6 +190,90 @@ High-speed multi-argument memoization.
 ```typescript
 import { memoize } from 'ocyrus';
 const fastFn = memoize((a, b) => a + b);
+```
+
+### `clamp`
+Fast number clamping.
+```typescript
+import { clamp } from 'ocyrus';
+const val = clamp(10, 0, 5); // 5
+```
+
+### `debounce`
+Delay function execution.
+```typescript
+import { debounce } from 'ocyrus';
+const log = debounce(console.log, 100);
+log('hello');
+```
+
+### `throttle`
+Limit function execution frequency.
+```typescript
+import { throttle } from 'ocyrus';
+const log = throttle(console.log, 100);
+log('hello');
+```
+
+### `isPlainObject`
+Check if value is a plain object.
+```typescript
+import { isPlainObject } from 'ocyrus';
+isPlainObject({}); // true
+isPlainObject([]); // false
+```
+
+### `pick` / `omit`
+Object property filtering.
+```typescript
+import { pick, omit } from 'ocyrus';
+const picked = pick({ a: 1, b: 2 }, ['a']); // { a: 1 }
+const omitted = omit({ a: 1, b: 2 }, ['a']); // { b: 2 }
+```
+
+### `chunk`
+Split array into chunks.
+```typescript
+import { chunk } from 'ocyrus';
+chunk([1, 2, 3, 4], 2); // [[1, 2], [3, 4]]
+```
+
+### `merge`
+Deeply merge objects.
+```typescript
+import { merge } from 'ocyrus';
+const merged = merge({ a: { b: 1 } }, { a: { c: 2 } }); // { a: { b: 1, c: 2 } }
+```
+
+### `shuffle`
+Fisher-Yates array shuffle.
+```typescript
+import { shuffle } from 'ocyrus';
+const shuffled = shuffle([1, 2, 3]);
+```
+
+### `once`
+Run function only once.
+```typescript
+import { once } from 'ocyrus';
+const initialize = once(() => console.log('Init'));
+initialize(); initialize(); // 'Init' logged only once
+```
+
+### `isPrimitive`
+Check if value is a primitive.
+```typescript
+import { isPrimitive } from 'ocyrus';
+isPrimitive(5); // true
+isPrimitive({}); // false
+```
+
+### `castArray`
+Ensure value is an array.
+```typescript
+import { castArray } from 'ocyrus';
+castArray(5); // [5]
+castArray([5]); // [5]
 ```
 
 ---
