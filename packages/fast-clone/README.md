@@ -16,7 +16,7 @@ Part of the [Ocyrus](https://github.com/pnishith/ocyrus) suite.
 | Method | Ops/sec | Comparison |
 | :--- | :--- | :--- |
 | **`fastClone`** | **4.7M** | **Fastest** |
-| `JSON.parse` | 1.1M | 4x slower |
+| `lodash/cloneDeep` | 1.0M | 4.4x slower |
 | `structuredClone` | 0.5M | 8.5x slower |
 
 ## 📦 Installation

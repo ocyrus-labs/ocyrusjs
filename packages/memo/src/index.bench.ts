@@ -1,15 +1,17 @@
 import { bench, describe } from 'vitest';
-import { memoize } from './index';
+import { memoize as ocyrusMemo } from './index';
+import { memoize as lodashMemo } from 'lodash';
 
-describe('Memoization Performance', () => {
+describe('Memoization Performance: Ocyrus vs Lodash', () => {
   const slowFn = (a: number, b: number) => a + b;
-  const memo = memoize(slowFn);
+  const ocyrus = ocyrusMemo(slowFn);
+  const lodash = lodashMemo(slowFn);
 
   bench('ocyrus/memoize (hit)', () => {
-    memo(1, 2);
+    ocyrus(1, 2);
   });
 
-  bench('native/function call', () => {
-    slowFn(1, 2);
+  bench('lodash/memoize (hit)', () => {
+    lodash(1, 2);
   });
 });

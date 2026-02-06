@@ -1,7 +1,8 @@
 import { bench, describe } from 'vitest';
 import { fastClone } from './index';
+import { cloneDeep } from 'lodash';
 
-describe('fastClone vs Native (Structured Clone / JSON)', () => {
+describe('fastClone vs Native vs Lodash', () => {
   const complexObj = {
     id: 1,
     name: 'Ocyrus',
@@ -22,7 +23,7 @@ describe('fastClone vs Native (Structured Clone / JSON)', () => {
     structuredClone(complexObj);
   });
 
-  bench('native/JSON.parse(JSON.stringify)', () => {
-    JSON.parse(JSON.stringify(complexObj));
+  bench('lodash/cloneDeep', () => {
+    cloneDeep(complexObj);
   });
 });
