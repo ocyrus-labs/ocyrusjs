@@ -25,6 +25,7 @@
 | **`lru`** | Fast LRU cache using Map order. | **1.8M ops/sec** |
 | **`pool`** | Object pool for GC prevention. | **31M ops/sec** |
 | **`bitset`** | Memory-efficient bit manipulation. | **33M ops/sec** |
+| **`memo`** | High-speed multi-arg memoization. | **30M ops/sec** |
 
 ---
 

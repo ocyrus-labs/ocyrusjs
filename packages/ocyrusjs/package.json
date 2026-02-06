@@ -27,7 +27,8 @@
     "@ocyrusjs/event-emitter": "^1.0.0",
     "@ocyrusjs/lru": "^1.0.0",
     "@ocyrusjs/pool": "^1.0.0",
-    "@ocyrusjs/bitset": "^1.0.0"
+    "@ocyrusjs/bitset": "^1.0.0",
+    "@ocyrusjs/memo": "^1.0.0"
   },
   "keywords": ["performance", "utility", "zero-allocation", "bundle"],
   "author": "Nishith Patel",
