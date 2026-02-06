@@ -1,0 +1,23 @@
+{
+  "name": "@ocyrusjs/shuffle",
+  "version": "1.0.0",
+  "description": "High-performance array shuffling using Fisher-Yates.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "bench": "vitest bench"
+  },
+  "keywords": ["shuffle", "array", "performance", "fast", "fisher-yates"],
+  "author": "Nishith Patel",
+  "license": "MIT"
+}
