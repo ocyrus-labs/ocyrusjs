@@ -5,7 +5,7 @@ describe('deepAccess', () => {
   const data = {
     user: {
       profile: {
-        name: 'Ocyrus',
+        name: 'OcyrusJs',
         tags: ['fast', 'safe']
       },
       settings: null
@@ -14,7 +14,7 @@ describe('deepAccess', () => {
 
   describe('deepGet', () => {
     it('retrieves nested values', () => {
-      expect(deepGet(data, 'user.profile.name')).toBe('Ocyrus');
+      expect(deepGet(data, 'user.profile.name')).toBe('OcyrusJs');
     });
 
     it('retrieves array values via dot or bracket', () => {

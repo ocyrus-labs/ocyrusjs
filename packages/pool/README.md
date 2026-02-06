@@ -2,7 +2,7 @@
 
 > **Simple, high-performance object pooling to prevent Garbage Collection pressure.**
 
-Part of the [Ocyrus](https://github.com/pnishith/ocyrus) suite.
+Part of the [OcyrusJs](https://github.com/ocyrus-labs/ocyrusjs) suite.
 
 ## ✨ Features
 

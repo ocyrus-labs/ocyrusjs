@@ -2,7 +2,7 @@
 
 > **High-performance, zero-allocation-on-emit event emitter.**
 
-Part of the [Ocyrus](https://github.com/pnishith/ocyrus) suite.
+Part of the [OcyrusJs](https://github.com/ocyrus-labs/ocyrusjs) suite.
 
 ## ✨ Features
 
@@ -18,7 +18,7 @@ Part of the [Ocyrus](https://github.com/pnishith/ocyrus) suite.
 | **`ocyrus/EventEmitter`** | **23.0M** | **Parity** |
 | `node:events` | 23.2M | Parity |
 
-*Note: While raw ops/sec matches Node's optimized native emitter, Ocyrus ensures zero garbage collection overhead in non-Node environments (like Browsers or Edge).*
+*Note: While raw ops/sec matches Node's optimized native emitter, OcyrusJs ensures zero garbage collection overhead in non-Node environments (like Browsers or Edge).*
 
 ## 📦 Installation
 

@@ -13,7 +13,7 @@ describe('Benchmarks', () => {
     items.map(expensiveFn);
   });
 
-  bench('Ocyrus heavyMap (Non-Blocking)', async () => {
+  bench('OcyrusJs heavyMap (Non-Blocking)', async () => {
     await heavyMap(items, expensiveFn);
   });
 });

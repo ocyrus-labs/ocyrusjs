@@ -2,7 +2,7 @@
 
 > **Blazing fast, zero-dependency LRU cache using Map insertion order.**
 
-Part of the [Ocyrus](https://github.com/pnishith/ocyrus) suite.
+Part of the [OcyrusJs](https://github.com/ocyrus-labs/ocyrusjs) suite.
 
 ## ✨ Features
 

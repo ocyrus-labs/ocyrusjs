@@ -2,7 +2,7 @@
 
 > **High-performance, zero-allocation deep clone utility for JavaScript.**
 
-Part of the [Ocyrus](https://github.com/pnishith/ocyrus) suite.
+Part of the [OcyrusJs](https://github.com/ocyrus-labs/ocyrusjs) suite.
 
 ## ✨ Features
 

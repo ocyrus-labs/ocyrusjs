@@ -19,7 +19,7 @@ describe('Benchmarks', () => {
     const val = obj?.a?.b?.c?.d?.e;
   });
 
-  bench('Ocyrus deepGet (Cached/Fast)', () => {
+  bench('OcyrusJs deepGet (Cached/Fast)', () => {
     deepGet(obj, 'a.b.c.d.e');
   });
 

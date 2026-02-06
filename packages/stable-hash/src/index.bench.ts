@@ -15,7 +15,7 @@ describe('Benchmarks', () => {
     JSON.stringify(obj);
   });
 
-  bench('Ocyrus stableHash (Sorted)', () => {
+  bench('OcyrusJs stableHash (Sorted)', () => {
     stableHash(obj);
   });
 

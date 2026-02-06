@@ -11,7 +11,7 @@ describe('Benchmarks', () => {
     } catch {}
   });
 
-  bench('Ocyrus safeJSON (Valid)', () => {
+  bench('OcyrusJs safeJSON (Valid)', () => {
     safeJSON(goodJson);
   });
 
@@ -21,7 +21,7 @@ describe('Benchmarks', () => {
     } catch {}
   });
 
-  bench('Ocyrus safeJSON (Invalid/Safe)', () => {
+  bench('OcyrusJs safeJSON (Invalid/Safe)', () => {
     safeJSON(badJson, []);
   });
 });

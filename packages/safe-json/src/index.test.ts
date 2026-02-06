@@ -3,9 +3,9 @@ import { safeJSON } from './index';
 
 describe('safeJSON', () => {
   it('parses valid JSON correctly', () => {
-    const input = '{"name": "Ocyrus", "fast": true}';
+    const input = '{"name": "OcyrusJs", "fast": true}';
     const result = safeJSON(input);
-    expect(result).toEqual({ name: 'Ocyrus', fast: true });
+    expect(result).toEqual({ name: 'OcyrusJs', fast: true });
   });
 
   it('returns fallback for invalid JSON', () => {

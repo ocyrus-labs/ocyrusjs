@@ -4,7 +4,7 @@ import { fastClone } from './index';
 describe('fastClone vs Native', () => {
   const complexObj = {
     id: 1,
-    name: 'Ocyrus',
+    name: 'OcyrusJs',
     meta: {
       tags: ['perf', 'utility', 'high-speed'],
       nested: {

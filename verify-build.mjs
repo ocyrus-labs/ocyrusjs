@@ -1,7 +1,7 @@
 import { safeJSON, stableHash, deepGet } from './dist/index.js';
 import assert from 'assert';
 
-console.log('📦 Verifying Ocyrus Build...');
+console.log('📦 Verifying OcyrusJs Build...');
 
 // 1. safeJSON
 const json = safeJSON('{"ok":true}', {});

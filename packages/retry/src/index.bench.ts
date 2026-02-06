@@ -11,7 +11,7 @@ describe('Benchmarks', () => {
     await successFn();
   });
 
-  bench('Ocyrus Retry Wrapper (Happy Path)', async () => {
+  bench('OcyrusJs Retry Wrapper (Happy Path)', async () => {
     await retry(successFn, { retries: 3 });
   });
 });
