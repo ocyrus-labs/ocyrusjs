@@ -7,3 +7,4 @@ export * from '@ocyrusjs/fast-clone';
 export * from '@ocyrusjs/event-emitter';
 export * from '@ocyrusjs/lru';
 export * from '@ocyrusjs/pool';
+export * from '@ocyrusjs/bitset';
