@@ -23,6 +23,7 @@
 | **`fastClone`** | Deep clone utility. 8x faster than `structuredClone`. | **4.7M ops/sec** |
 | **`eventEmitter`** | High-perf emitter with zero-alloc `emit`. | **23M ops/sec** |
 | **`lru`** | Fast LRU cache using Map order. | **1.8M ops/sec** |
+| **`pool`** | Object pool for GC prevention. | **31M ops/sec** |
 
 ---
 

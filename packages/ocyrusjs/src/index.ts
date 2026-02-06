@@ -6,3 +6,4 @@ export * from '@ocyrusjs/retry';
 export * from '@ocyrusjs/fast-clone';
 export * from '@ocyrusjs/event-emitter';
 export * from '@ocyrusjs/lru';
+export * from '@ocyrusjs/pool';
