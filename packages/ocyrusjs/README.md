@@ -118,6 +118,164 @@ const b = { filter: 'active', id: 1 }; // Different order
 console.log(stableHash(a) === stableHash(b)); // true
 ```
 
+### `retry`
+Retry a promise with exponential backoff and jitter.
+
+```typescript
+import { retry } from 'ocyrus';
+
+const data = await retry(async () => {
+  return await fetchData();
+}, {
+  retries: 3,
+  minTimeout: 500,
+  onRetry: (err, attempt) => console.log(`Retry ${attempt}...`)
+});
+```
+
+### `fastClone`
+Deep clone objects and arrays up to 8x faster than `structuredClone`.
+
+```typescript
+import { fastClone } from 'ocyrus';
+
+const original = { a: 1, b: { c: 2 } };
+const copy = fastClone(original);
+
+console.log(copy !== original); // true
+console.log(copy.b !== original.b); // true
+```
+
+### `eventEmitter`
+Zero-allocation events.
+
+```typescript
+import { EventEmitter } from 'ocyrus';
+const ee = new EventEmitter();
+ee.on('event', (data) => console.log(data));
+ee.emit('event', 'payload');
+```
+
+### `lru`
+Fast LRU cache.
+
+```typescript
+import { LRU } from 'ocyrus';
+const cache = new LRU(100);
+cache.set('key', 'value');
+```
+
+### `pool`
+Object pooling to prevent GC.
+
+```typescript
+import { Pool } from 'ocyrus';
+const pool = new Pool(() => ({ x: 0, y: 0 }));
+const v = pool.acquire();
+pool.release(v);
+```
+
+### `bitset`
+Memory-efficient bit manipulation.
+
+```typescript
+import { BitSet } from 'ocyrus';
+const bits = new BitSet(1024);
+bits.set(100);
+```
+
+### `memo`
+High-speed multi-argument memoization.
+
+```typescript
+import { memoize } from 'ocyrus';
+const fastFn = memoize((a, b) => a + b);
+```
+
+### `clamp`
+Fast number clamping.
+```typescript
+import { clamp } from 'ocyrus';
+const val = clamp(10, 0, 5); // 5
+```
+
+### `debounce`
+Delay function execution.
+```typescript
+import { debounce } from 'ocyrus';
+const log = debounce(console.log, 100);
+log('hello');
+```
+
+### `throttle`
+Limit function execution frequency.
+```typescript
+import { throttle } from 'ocyrus';
+const log = throttle(console.log, 100);
+log('hello');
+```
+
+### `isPlainObject`
+Check if value is a plain object.
+```typescript
+import { isPlainObject } from 'ocyrus';
+isPlainObject({}); // true
+isPlainObject([]); // false
+```
+
+### `pick` / `omit`
+Object property filtering.
+```typescript
+import { pick, omit } from 'ocyrus';
+const picked = pick({ a: 1, b: 2 }, ['a']); // { a: 1 }
+const omitted = omit({ a: 1, b: 2 }, ['a']); // { b: 2 }
+```
+
+### `chunk`
+Split array into chunks.
+```typescript
+import { chunk } from 'ocyrus';
+chunk([1, 2, 3, 4], 2); // [[1, 2], [3, 4]]
+```
+
+### `merge`
+Deeply merge objects.
+```typescript
+import { merge } from 'ocyrus';
+const merged = merge({ a: { b: 1 } }, { a: { c: 2 } }); // { a: { b: 1, c: 2 } }
+```
+
+### `shuffle`
+Fisher-Yates array shuffle.
+```typescript
+import { shuffle } from 'ocyrus';
+const shuffled = shuffle([1, 2, 3]);
+```
+
+### `once`
+Run function only once.
+```typescript
+import { once } from 'ocyrus';
+const initialize = once(() => console.log('Init'));
+initialize(); initialize(); // 'Init' logged only once
+```
+
+### `isPrimitive`
+Check if value is a primitive.
+```typescript
+import { isPrimitive } from 'ocyrus';
+isPrimitive(5); // true
+isPrimitive({}); // false
+```
+
+### `castArray`
+Ensure value is an array.
+```typescript
+import { castArray } from 'ocyrus';
+castArray(5); // [5]
+castArray([5]); // [5]
+```
+
 ---
 
 ## 🛠️ Benchmarks
