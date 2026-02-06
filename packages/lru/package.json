@@ -1,0 +1,23 @@
+{
+  "name": "@ocyrusjs/lru",
+  "version": "1.0.0",
+  "description": "Blazing fast, zero-dependency LRU cache using Map insertion order.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "bench": "vitest bench"
+  },
+  "keywords": ["lru", "cache", "performance", "fast", "tiny"],
+  "author": "Nishith Patel",
+  "license": "MIT"
+}

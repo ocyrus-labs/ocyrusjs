@@ -5,3 +5,4 @@ export * from '@ocyrusjs/stable-hash';
 export * from '@ocyrusjs/retry';
 export * from '@ocyrusjs/fast-clone';
 export * from '@ocyrusjs/event-emitter';
+export * from '@ocyrusjs/lru';

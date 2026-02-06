@@ -24,7 +24,8 @@
     "@ocyrusjs/stable-hash": "^1.0.0",
     "@ocyrusjs/retry": "^1.0.0",
     "@ocyrusjs/fast-clone": "^1.0.0",
-    "@ocyrusjs/event-emitter": "^1.0.0"
+    "@ocyrusjs/event-emitter": "^1.0.0",
+    "@ocyrusjs/lru": "^1.0.0"
   },
   "keywords": ["performance", "utility", "zero-allocation", "bundle"],
   "author": "Nishith Patel",
