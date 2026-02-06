@@ -1,0 +1,23 @@
+{
+  "name": "@ocyrusjs/is-plain-object",
+  "version": "1.0.0",
+  "description": "High-performance check for plain objects.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "bench": "vitest bench"
+  },
+  "keywords": ["is-plain-object", "type", "performance", "fast"],
+  "author": "Nishith Patel",
+  "license": "MIT"
+}
