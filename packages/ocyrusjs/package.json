@@ -1,6 +1,6 @@
 {
   "name": "ocyrusjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Zero-Allocation Utility Library for High-Performance JavaScript (Umbrella Package).",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
