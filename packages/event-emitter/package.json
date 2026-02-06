@@ -1,0 +1,23 @@
+{
+  "name": "@ocyrusjs/event-emitter",
+  "version": "1.0.0",
+  "description": "High-performance, zero-allocation-on-emit event emitter.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "bench": "vitest bench"
+  },
+  "keywords": ["event-emitter", "events", "performance", "zero-allocation", "pubsub"],
+  "author": "Nishith Patel",
+  "license": "MIT"
+}

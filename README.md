@@ -21,6 +21,7 @@
 | **`stableHash`** | Deterministic object hashing for caching. | **510k ops/sec** |
 | **`retry`** | High-perf exponential backoff with jitter. | **11.2M ops/sec** (Fast path) |
 | **`fastClone`** | Deep clone utility. 8x faster than `structuredClone`. | **4.7M ops/sec** |
+| **`eventEmitter`** | High-perf emitter with zero-alloc `emit`. | **23M ops/sec** |
 
 ---
 
