@@ -5,6 +5,8 @@
 [![npm version](https://img.shields.io/npm/v/ocyrusjs.svg)](https://www.npmjs.com/package/ocyrusjs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+**[Documentation](https://ocyrus-labs.github.io/ocyrusjs/)**
+
 **OcyrusJs** (pronounced *Osiris*) is a collection of essential utility functions designed for **critical-path performance**. Unlike standard utility libraries that prioritize convenience over memory usage, OcyrusJs focuses on:
 
 1.  **Zero-Allocation:** Reusing buffers and objects where possible to reduce GC pressure.
