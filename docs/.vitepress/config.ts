@@ -4,8 +4,28 @@ export default defineConfig({
   title: "Ocyrusjs",
   description: "High-performance, zero-allocation utility library for JavaScript.",
   base: '/ocyrusjs/',
+  lastUpdated: true,
+  cleanUrls: true,
+  sitemap: {
+    hostname: 'https://ocyrus-labs.github.io/ocyrusjs/'
+  },
+  head: [
+    ['link', { rel: 'icon', type: 'image/png', href: '/ocyrusjs/logo.png' }],
+    ['meta', { name: 'theme-color', content: '#5f87af' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:locale', content: 'en' }],
+    ['meta', { property: 'og:title', content: 'Ocyrusjs | Zero-Allocation JS Utilities' }],
+    ['meta', { property: 'og:site_name', content: 'Ocyrusjs' }],
+    ['meta', { property: 'og:url', content: 'https://ocyrus-labs.github.io/ocyrusjs/' }],
+    ['meta', { property: 'og:description', content: 'High-performance, memory-optimized utility library for critical-path JavaScript.' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:site', content: '@ocyrusjs' }],
+  ],
   themeConfig: {
     logo: '/logo.png',
+    search: {
+      provider: 'local'
+    },
     nav: [
       { text: 'Guide', link: '/guide/getting-started' },
       { text: 'Modules', link: '/modules/safe-json' }
@@ -58,6 +78,10 @@ export default defineConfig({
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2026-present Nishith Patel'
+    },
+    editLink: {
+      pattern: 'https://github.com/ocyrus-labs/ocyrusjs/edit/main/docs/:path',
+      text: 'Edit this page on GitHub'
     }
   }
 })
