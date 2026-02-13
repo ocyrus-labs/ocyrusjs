@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Ocyrusjs",
   description: "High-performance, zero-allocation utility library for JavaScript.",
+  base: '/ocyrusjs/',
   themeConfig: {
     logo: '/logo.png',
     nav: [
