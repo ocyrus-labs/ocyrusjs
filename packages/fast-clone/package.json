@@ -17,7 +17,32 @@
     "test": "vitest run",
     "bench": "vitest bench"
   },
-  "keywords": ["clone", "deep-clone", "performance", "zero-allocation", "copy"],
+  "keywords": [
+    "clone",
+    "deep-clone",
+    "performance",
+    "zero-allocation",
+    "copy"
+  ],
   "author": "Nishith Patel",
-  "license": "MIT"
+  "license": "MIT",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocyrus-labs/ocyrusjs.git",
+    "directory": "packages/fast-clone"
+  },
+  "bugs": {
+    "url": "https://github.com/ocyrus-labs/ocyrusjs/issues"
+  },
+  "homepage": "https://github.com/ocyrus-labs/ocyrusjs/tree/main/packages/fast-clone#readme",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

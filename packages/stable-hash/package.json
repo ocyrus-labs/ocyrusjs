@@ -17,7 +17,32 @@
     "test": "vitest run",
     "bench": "vitest bench"
   },
-  "keywords": ["hash", "stable", "deterministic", "object", "caching"],
+  "keywords": [
+    "hash",
+    "stable",
+    "deterministic",
+    "object",
+    "caching"
+  ],
   "author": "Nishith Patel",
-  "license": "MIT"
+  "license": "MIT",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocyrus-labs/ocyrusjs.git",
+    "directory": "packages/stable-hash"
+  },
+  "bugs": {
+    "url": "https://github.com/ocyrus-labs/ocyrusjs/issues"
+  },
+  "homepage": "https://github.com/ocyrus-labs/ocyrusjs/tree/main/packages/stable-hash#readme",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

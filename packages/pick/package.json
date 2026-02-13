@@ -17,7 +17,31 @@
     "test": "vitest run",
     "bench": "vitest bench"
   },
-  "keywords": ["pick", "object", "performance", "fast"],
+  "keywords": [
+    "pick",
+    "object",
+    "performance",
+    "fast"
+  ],
   "author": "Nishith Patel",
-  "license": "MIT"
+  "license": "MIT",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocyrus-labs/ocyrusjs.git",
+    "directory": "packages/pick"
+  },
+  "bugs": {
+    "url": "https://github.com/ocyrus-labs/ocyrusjs/issues"
+  },
+  "homepage": "https://github.com/ocyrus-labs/ocyrusjs/tree/main/packages/pick#readme",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

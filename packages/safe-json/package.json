@@ -17,7 +17,31 @@
     "test": "vitest run",
     "bench": "vitest bench"
   },
-  "keywords": ["json", "safe", "parse", "zero-allocation"],
+  "keywords": [
+    "json",
+    "safe",
+    "parse",
+    "zero-allocation"
+  ],
   "author": "Nishith Patel",
-  "license": "MIT"
+  "license": "MIT",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocyrus-labs/ocyrusjs.git",
+    "directory": "packages/safe-json"
+  },
+  "bugs": {
+    "url": "https://github.com/ocyrus-labs/ocyrusjs/issues"
+  },
+  "homepage": "https://github.com/ocyrus-labs/ocyrusjs/tree/main/packages/safe-json#readme",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

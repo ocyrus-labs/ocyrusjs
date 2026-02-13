@@ -42,7 +42,31 @@
     "@ocyrusjs/is-primitive": "^1.0.0",
     "@ocyrusjs/cast-array": "^1.0.0"
   },
-  "keywords": ["performance", "utility", "zero-allocation", "bundle"],
+  "keywords": [
+    "performance",
+    "utility",
+    "zero-allocation",
+    "bundle"
+  ],
   "author": "Nishith Patel",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocyrus-labs/ocyrusjs.git",
+    "directory": "packages/ocyrusjs"
+  },
+  "bugs": {
+    "url": "https://github.com/ocyrus-labs/ocyrusjs/issues"
+  },
+  "homepage": "https://github.com/ocyrus-labs/ocyrusjs/tree/main/packages/ocyrusjs#readme",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

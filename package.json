@@ -16,5 +16,16 @@
     "vitest": "^1.2.1"
   },
   "author": "Nishith Patel",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocyrus-labs/ocyrusjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ocyrus-labs/ocyrusjs/issues"
+  },
+  "homepage": "https://github.com/ocyrus-labs/ocyrusjs#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

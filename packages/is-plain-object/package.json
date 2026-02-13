@@ -17,7 +17,31 @@
     "test": "vitest run",
     "bench": "vitest bench"
   },
-  "keywords": ["is-plain-object", "type", "performance", "fast"],
+  "keywords": [
+    "is-plain-object",
+    "type",
+    "performance",
+    "fast"
+  ],
   "author": "Nishith Patel",
-  "license": "MIT"
+  "license": "MIT",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocyrus-labs/ocyrusjs.git",
+    "directory": "packages/is-plain-object"
+  },
+  "bugs": {
+    "url": "https://github.com/ocyrus-labs/ocyrusjs/issues"
+  },
+  "homepage": "https://github.com/ocyrus-labs/ocyrusjs/tree/main/packages/is-plain-object#readme",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
