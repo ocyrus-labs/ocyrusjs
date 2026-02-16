@@ -41,6 +41,7 @@
 | **`isPrimitive`** | Fast primitive type check. | **50M ops/sec** | Minimal logic |
 | **`castArray`** | Ensure value is an array. | **45M ops/sec** | Fast branching |
 | **`bloomFilter`** | Probabilistic membership testing. | **4M ops/sec** | Memory efficient |
+| **`occurrenceSketch`** | High-perf Count-Min Sketch. | **5M ops/sec** | Fixed memory frequency |
 
 ---
 

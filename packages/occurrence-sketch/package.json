@@ -1,0 +1,49 @@
+{
+  "name": "@ocyrusjs/occurrence-sketch",
+  "version": "1.0.0",
+  "description": "High-performance Count-Min Sketch for tracking item frequencies with minimal memory.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "bench": "vitest bench"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocyrus-labs/ocyrusjs.git",
+    "directory": "packages/occurrence-sketch"
+  },
+  "keywords": [
+    "count-min-sketch",
+    "frequency",
+    "occurrence",
+    "probabilistic",
+    "performance",
+    "zero-allocation"
+  ],
+  "author": "Nishith Patel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ocyrus-labs/ocyrusjs/issues"
+  },
+  "homepage": "https://github.com/ocyrus-labs/ocyrusjs/tree/main/packages/occurrence-sketch#readme"
+}

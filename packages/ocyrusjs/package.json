@@ -41,7 +41,8 @@
     "@ocyrusjs/once": "^1.0.0",
     "@ocyrusjs/is-primitive": "^1.0.0",
     "@ocyrusjs/cast-array": "^1.0.0",
-    "@ocyrusjs/bloom-filter": "^1.0.0"
+    "@ocyrusjs/bloom-filter": "^1.0.0",
+    "@ocyrusjs/occurrence-sketch": "^1.0.0"
   },
   "keywords": [
     "performance",

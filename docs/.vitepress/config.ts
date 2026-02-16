@@ -48,6 +48,7 @@ export default defineConfig({
           { text: 'retry', link: '/modules/retry' },
           { text: 'fastClone', link: '/modules/fast-clone' },
           { text: 'bloomFilter', link: '/modules/bloom-filter' },
+          { text: 'occurrenceSketch', link: '/modules/occurrence-sketch' },
         ]
       },
       {

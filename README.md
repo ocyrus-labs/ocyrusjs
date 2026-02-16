@@ -41,6 +41,7 @@
 | **`isPrimitive`** | Fast primitive type check. | **50M ops/sec** | Minimal logic |
 | **`castArray`** | Ensure value is an array. | **45M ops/sec** | Fast branching |
 | **`bloomFilter`** | Probabilistic membership testing. | **4M ops/sec** | Memory efficient |
+| **`occurrenceSketch`** | High-perf Count-Min Sketch. | **5M ops/sec** | Fixed memory frequency |
 
 ---
 
@@ -287,6 +288,16 @@ const filter = new BloomFilter(1000, 0.01);
 filter.add('item-1');
 filter.has('item-1'); // true
 filter.has('item-2'); // false
+```
+
+### `occurrenceSketch`
+Track item frequencies with fixed memory.
+```typescript
+import { OccurrenceSketch } from 'ocyrus';
+const sketch = new OccurrenceSketch(0.001, 0.01);
+sketch.add('user-1');
+sketch.add('user-1');
+sketch.count('user-1'); // 2
 ```
 
 ---
