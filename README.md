@@ -40,6 +40,7 @@
 | **`once`** | Restrict function to one call. | **35M ops/sec** | Fast wrapper |
 | **`isPrimitive`** | Fast primitive type check. | **50M ops/sec** | Minimal logic |
 | **`castArray`** | Ensure value is an array. | **45M ops/sec** | Fast branching |
+| **`bloomFilter`** | Probabilistic membership testing. | **4M ops/sec** | Memory efficient |
 
 ---
 
@@ -276,6 +277,16 @@ Ensure value is an array.
 import { castArray } from 'ocyrus';
 castArray(5); // [5]
 castArray([5]); // [5]
+```
+
+### `bloomFilter`
+Memory-efficient membership testing.
+```typescript
+import { BloomFilter } from 'ocyrus';
+const filter = new BloomFilter(1000, 0.01);
+filter.add('item-1');
+filter.has('item-1'); // true
+filter.has('item-2'); // false
 ```
 
 ---

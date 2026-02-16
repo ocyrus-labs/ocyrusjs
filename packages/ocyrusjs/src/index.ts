@@ -21,3 +21,4 @@ export * from '@ocyrusjs/shuffle';
 export * from '@ocyrusjs/once';
 export * from '@ocyrusjs/is-primitive';
 export * from '@ocyrusjs/cast-array';
+export * from '@ocyrusjs/bloom-filter';

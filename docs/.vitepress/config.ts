@@ -47,6 +47,7 @@ export default defineConfig({
           { text: 'stableHash', link: '/modules/stable-hash' },
           { text: 'retry', link: '/modules/retry' },
           { text: 'fastClone', link: '/modules/fast-clone' },
+          { text: 'bloomFilter', link: '/modules/bloom-filter' },
         ]
       },
       {
